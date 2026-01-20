@@ -13,7 +13,7 @@ interface SkillCard {
 const skills: SkillCard[] = [
   { id: 1, name: "PYTHON", logoPath: "/python-logo-monochrome.png", projects: ["AI English Query", "Chat Max", "AI Operator", "AI Weather Report", "AI News Report", "AI Backup Analyzer"] },
   { id: 2, name: "FLUTTER DART", logoPath: "/flutter_logo_icon_214732.png", projects: ["IxIxI's Airport App", "Home AI Max"] },
-  { id: 3, name: "SQL", logoPath: "/sql2.png", projects: [] },
+  { id: 3, name: "SQL", logoPath: "/sql2.png", projects: ["AI English Query"] },
   { id: 4, name: "TYPESCRIPT", logoPath: "/free-typescript-logo-icon-svg-download-png-1982828.png", projects: ["Web Portfolio"] },
   { id: 5, name: "TAILWIND CSS", logoPath: "/css_tailwind_logo_icon_214735.png", projects: ["Web Portfolio"] },
   { id: 6, name: "AGENTIC AI", logoPath: "/openai.png", projects: ["AI English Query", "Chat Max", "Home AI Max", "AI Operator", "AI Weather Report", "AI News Report", "AI Backup Analyzer"] }
@@ -153,7 +153,7 @@ export default function Skills() {
             {/* Left Arrow */}
             <button
               onClick={prevSlide}
-              className="p-2 hover:bg-zinc-700 rounded-lg transition-colors"
+              className="p-2 hover:bg-gray-900 rounded-lg transition-colors"
               aria-label="Previous skill"
             >
               <svg
@@ -197,7 +197,7 @@ export default function Skills() {
             {/* Right Arrow */}
             <button
               onClick={nextSlide}
-              className="p-2 hover:bg-zinc-700 rounded-lg transition-colors"
+              className="p-2 hover:bg-gray-900 rounded-lg transition-colors"
               aria-label="Next skill"
             >
               <svg

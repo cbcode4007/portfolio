@@ -13,7 +13,7 @@ export default function Header() {
             width={108}
             height={24}
             // className="dark:invert"
-            className="invert"
+            className="invert transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"            
           />
         </Link>
 

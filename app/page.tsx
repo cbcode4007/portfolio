@@ -85,7 +85,7 @@ export default function Home() {
                 LEARN MORE
               </Link>              
             </h2>           
-            <hr className="block clear-both w-1/2 h-px bg-white border-0" />
+            <hr className="block clear-both w-1/2 h-px bg-zinc-400 border-0" />
           </div>
 
           <div className="flex flex-col justify-center items-center gap-1 flex-1 min-w-0">
@@ -120,7 +120,7 @@ export default function Home() {
               </div>     
               <div className="flex flex-row gap-2">
                 <Image
-                  src="/sql.png"
+                  src="/sql2.png"
                   alt="SQL Logo"
                   width={32}
                   height={16}
@@ -173,7 +173,7 @@ export default function Home() {
                 LEARN MORE
               </Link>              
             </h2>           
-            <hr className="block clear-both w-2/4 h-px bg-white border-0" />
+            <hr className="block clear-both w-2/4 h-px bg-zinc-400 border-0" />
           </div>
 
           <div className="flex flex-col justify-center items-center gap-1 flex-1 min-w-0">
@@ -184,10 +184,11 @@ export default function Home() {
             <div className="flex flex-col justify-start items-start gap-1 flex-1 min-w-0">
               <div className="flex flex-row gap-2">
                 <Image
-                  src="/mobile_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                  src="/phone invert.png"
                   alt="Phone Icon"
                   width={32}
-                  height={16}                  
+                  height={16}
+                  className="invert"                  
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                   IxIxI's Airport App
@@ -195,10 +196,11 @@ export default function Home() {
               </div>
               <div className="flex flex-row gap-2">
                 <Image
-                  src="/computer_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                  src="/computer invert.png"
                   alt="PC Icon"
                   width={32}
                   height={16}
+                  className="invert"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                   AI English Query
@@ -206,10 +208,11 @@ export default function Home() {
               </div>            
               <div className="flex flex-row gap-2">
                 <Image
-                  src="/mobile_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                  src="/phone invert.png"
                   alt="Phone Icon"
                   width={32}
                   height={16}
+                  className="invert"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                   Home AI Max
@@ -217,10 +220,11 @@ export default function Home() {
               </div>     
               <div className="flex flex-row gap-2">
                 <Image
-                  src="/computer_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                  src="/computer invert.png"
                   alt="PC Icon"
                   width={32}
                   height={16}
+                  className="invert"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                   Chat Max
@@ -228,10 +232,11 @@ export default function Home() {
               </div>
               <div className="flex flex-row gap-2">
                 <Image
-                  src="/computer_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                  src="/computer invert.png"
                   alt="PC Icon"
                   width={32}
                   height={16}
+                  className="invert"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                   AI Operator
@@ -239,10 +244,11 @@ export default function Home() {
               </div>
               <div className="flex flex-row gap-2">
                 <Image
-                  src="/computer_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                  src="/computer invert.png"
                   alt="PC Icon"
                   width={32}
                   height={16}
+                  className="invert"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                   AI Backup Analyzer
@@ -255,7 +261,7 @@ export default function Home() {
                 LEARN MORE
               </Link>              
             </h2>           
-            <hr className="block clear-both w-2/4 h-px bg-white border-0" />
+            <hr className="block clear-both w-2/4 h-px bg-zinc-400 border-0" />
 
           </div>
 
