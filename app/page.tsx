@@ -226,6 +226,28 @@ export default function Home() {
                   Chat Max
                 </p>
               </div>
+              <div className="flex flex-row gap-2">
+                <Image
+                  src="/computer_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                  alt="PC Icon"
+                  width={32}
+                  height={16}
+                />
+                <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
+                  AI Operator
+                </p>
+              </div>
+              <div className="flex flex-row gap-2">
+                <Image
+                  src="/computer_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                  alt="PC Icon"
+                  width={32}
+                  height={16}
+                />
+                <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
+                  AI Backup Analyzer
+                </p>
+              </div>
             </div>
 
             <h2 className="text-m font-semibold leading-10 tracking-wide text-zinc-50 pt-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
