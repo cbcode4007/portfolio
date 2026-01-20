@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +26,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-screen overflow-hidden">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden`}
       >
-        {children}
+        <div className="min-h-screen font-sans bg-linear-to-b from-black to-transparent">
+          <Header />
+          <Image
+            src="/source.gif"
+            alt="background"
+            fill
+            className="object-cover absolute inset-0 -z-10 opacity-10"
+            unoptimized={true}
+            priority
+          />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
