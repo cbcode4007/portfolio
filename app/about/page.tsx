@@ -60,7 +60,7 @@ export default function About() {
             </h1>
           </div>
 
-          {/* Scrollable content (we forward global scroll/touch events here) */}
+          {/* Scrollable content (forward global scroll/touch events here) */}
           <div ref={contentRef} className="flex-1 overflow-y-auto w-full flex flex-col items-center max-h-[45vh] scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 scroll-smooth">
             <p className="mt-6 max-w-md text-lg leading-8 text-zinc-400 pb-8">
               Welcome to my portfolio website! I'm Colin, a professional IT solutions developer dedicated to crafting a variety of engaging and cutting-edge applications for my clients. Whether you're an individual or a business, and whether it's a desktop, web or mobile app, I'm here to make it come to life. With an ever-burning passion for technology and innovation, I am always learning, mastering, and doing something new, so you can bet that I'll deliver a tailored solution to meet and exceed your unique needs. Explore my work and give me a call or email to see how I could help you!
@@ -92,14 +92,12 @@ export default function About() {
               className="w-full h-full object-cover" />
           </div>
 
-          <div className="flex flex-row gap-4 pt-8">
+          <div className="flex flex-row gap-4 pt-6">
             <a
-              // className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-39.5"
               className="flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid px-5 transition-colors hover:border-transparent border-white/[.145] hover:bg-gray-700 md:w-39.5"
               href="/contact"
             >
               <Image
-                // className="dark:invert"              
                 src="/call_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
                 alt="Phone icon"
                 width={16}
@@ -108,13 +106,11 @@ export default function About() {
               Contact Me
             </a>
             
-            <a
-              // className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-39.5"
+            <a              
               className="flex h-12 w-full items-center justify-center gap-2 rounded-full border border-solid px-5 transition-colors hover:border-transparent border-white/[.145] hover:bg-gray-700 md:w-39.5"
               href="/projects"
             >
               <Image
-                // className="dark:invert"              
                 src="/rocket_launch_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
                 alt="Rocket icon"
                 width={16}

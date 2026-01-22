@@ -4,36 +4,12 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex h-[calc(100vh-56px)] items-center justify-center font-sans overflow-y-auto">
-      {/* <main className="flex w-full max-w-3xl flex-col items-center gap-12 px-16 text-center bg-zinc-150 dark:bg-neutral-950"> */}
       <main className="flex w-full max-w-3xl flex-col items-center gap-8 px-16 text-center">
 
         <div className="flex flex-col items-center pt-24">
-          {/* <p className="max-w-md text-sm leading-8 text-zinc-400">
-            The name's Bond
-          </p> */}
-          {/* <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50"> */}
           <h1 className=" text-3xl font-semibold leading-10 tracking-tight text-zinc-50">
             Colin Bond
-          </h1>
-
-          {/* <Image
-            className="dark:invert"
-            src="/profile.png"
-            alt="Personal logo"
-            width={256}
-            height={256}
-            priority
-          /> */}
-
-          {/* <Image
-            src="/source.gif"
-            alt="background"
-            fill
-            className="object-cover absolute inset-0 -z-10 opacity-10"
-            unoptimized={true}
-            priority
-          /> */}
-          
+          </h1>          
           <div className="pt-4">
             <div className="w-48 h-48 overflow-hidden rounded-full glowing-border">
               <Image            
@@ -46,25 +22,6 @@ export default function Home() {
               />
             </div>
           </div>
-
-          {/* <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p> */}
-          {/* <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400"> */}
           <p className="max-w-md text-lg leading-8 text-zinc-400 pt-4">
             IT Solutions
           </p>
@@ -80,12 +37,14 @@ export default function Home() {
             <p className="max-w-md text-m leading-8 text-zinc-400">
               Welcome to my portfolio website! I'm Colin, a professional IT solutions developer dedicated to crafting a variety of engaging and cutting-edge applications for my clients.
             </p>
-            <h2 className="text-m font-semibold leading-10 tracking-wide text-zinc-50 pt-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
-              <Link href="/about">
-                LEARN MORE
-              </Link>              
-            </h2>           
-            <hr className="block clear-both w-1/2 h-px bg-zinc-400 border-0" />
+            <div className="group">
+              <h2 className="text-m font-semibold leading-10 tracking-wide text-zinc-50 pt-2 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] group-hover:scale-110 transition-all duration-300 ease-out">
+                <Link href="/about">
+                  LEARN MORE
+                </Link>              
+              </h2>           
+              <hr className="mx-auto opacity-0 w-1/2 text-zinc-400 group-hover:scale-220 group-hover:opacity-100 transition-all ease-out "/>
+            </div>
           </div>
 
           <div className="flex flex-col justify-center items-center gap-1 flex-1 min-w-0">
@@ -168,12 +127,14 @@ export default function Home() {
               </div>
             </div>
 
-            <h2 className="text-m font-semibold leading-10 tracking-wide text-zinc-50 pt-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
-              <Link href="/skills">
-                LEARN MORE
-              </Link>              
-            </h2>           
-            <hr className="block clear-both w-2/4 h-px bg-zinc-400 border-0" />
+            <div className="group">
+              <h2 className="text-m font-semibold leading-10 tracking-wide text-zinc-50 pt-2 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] group-hover:scale-110 transition-all duration-300 ease-out">
+                <Link href="/skills">
+                  LEARN MORE
+                </Link>              
+              </h2>           
+              <hr className="mx-auto opacity-0 w-1/2 text-zinc-400 group-hover:scale-220 group-hover:opacity-100 transition-all ease-out "/>
+            </div>         
           </div>
 
           <div className="flex flex-col justify-center items-center gap-1 flex-1 min-w-0">
@@ -182,120 +143,109 @@ export default function Home() {
             </h2>
 
             <div className="flex flex-col justify-start items-start gap-1 flex-1 min-w-0">
-              <div className="flex flex-row gap-2">
-                <Image
-                  src="/phone invert.png"
-                  alt="Phone Icon"
-                  width={32}
-                  height={16}
-                  className="invert"                  
-                />
-                <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
-                  IxIxI's Airport App
-                </p>
-              </div>
-              <div className="flex flex-row gap-2">
-                <Image
-                  src="/computer invert.png"
-                  alt="PC Icon"
-                  width={32}
-                  height={16}
-                  className="invert"
-                />
-                <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
-                  AI English Query
-                </p>
-              </div>            
-              <div className="flex flex-row gap-2">
-                <Image
-                  src="/phone invert.png"
-                  alt="Phone Icon"
-                  width={32}
-                  height={16}
-                  className="invert"
-                />
-                <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
-                  Home AI Max
-                </p>
-              </div>     
-              <div className="flex flex-row gap-2">
-                <Image
-                  src="/computer invert.png"
-                  alt="PC Icon"
-                  width={32}
-                  height={16}
-                  className="invert"
-                />
-                <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
-                  Chat Max
-                </p>
-              </div>
-              <div className="flex flex-row gap-2">
-                <Image
-                  src="/computer invert.png"
-                  alt="PC Icon"
-                  width={32}
-                  height={16}
-                  className="invert"
-                />
-                <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
-                  AI Operator
-                </p>
-              </div>
-              <div className="flex flex-row gap-2">
-                <Image
-                  src="/computer invert.png"
-                  alt="PC Icon"
-                  width={32}
-                  height={16}
-                  className="invert"
-                />
-                <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
-                  AI Backup Analyzer
-                </p>
-              </div>
+              <Link href="/projects/ixixi-airport-app">
+                <div className="flex flex-row gap-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                  <Image
+                    src="/phone invert.png"
+                    alt="Phone Icon"
+                    width={32}
+                    height={16}
+                    className="invert"                  
+                  />
+                  <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
+                    IxIxI's Airport App
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/projects/ixixi-airport-app">
+                <div className="flex flex-row gap-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                  <Image
+                    src="/computer invert.png"
+                    alt="PC Icon"
+                    width={32}
+                    height={16}
+                    className="invert"
+                  />
+                  <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
+                    AI English Query
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/projects/ixixi-airport-app">
+                <div className="flex flex-row gap-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                  <Image
+                    src="/phone invert.png"
+                    alt="Phone Icon"
+                    width={32}
+                    height={16}
+                    className="invert"
+                  />
+                  <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
+                    Home AI Max
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/projects/ixixi-airport-app">
+                <div className="flex flex-row gap-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                  <Image
+                    src="/computer invert.png"
+                    alt="PC Icon"
+                    width={32}
+                    height={16}
+                    className="invert"
+                  />
+                  <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
+                    Chat Max
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/projects/ixixi-airport-app">
+                <div className="flex flex-row gap-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                  <Image
+                    src="/computer invert.png"
+                    alt="PC Icon"
+                    width={32}
+                    height={16}
+                    className="invert"
+                  />
+                  <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
+                    AI Operator
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/projects/ixixi-airport-app">
+                <div className="flex flex-row gap-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+                  <Image
+                    src="/computer invert.png"
+                    alt="PC Icon"
+                    width={32}
+                    height={16}
+                    className="invert"
+                  />
+                  <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
+                    AI Backup Analyzer
+                  </p>
+                </div>
+              </Link>
             </div>
 
-            <h2 className="text-m font-semibold leading-10 tracking-wide text-zinc-50 pt-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
-              <Link href="/projects">
-                LEARN MORE
-              </Link>              
-            </h2>           
-            <hr className="block clear-both w-2/4 h-px bg-zinc-400 border-0" />
+            <div className="group">
+              <h2 className="text-m font-semibold leading-10 tracking-wide text-zinc-50 pt-2 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] group-hover:scale-110 transition-all duration-300 ease-out">
+                <Link href="/projects">
+                  LEARN MORE
+                </Link>              
+              </h2>           
+              <hr className="mx-auto opacity-0 w-1/2 text-zinc-400 group-hover:scale-220 group-hover:opacity-100 transition-all ease-out "/>
+            </div>
 
           </div>
 
         </div>
-
-        {/* <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            // className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-39.5"
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#ccc] md:w-39.5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              // className="dark:invert"
-              className="invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Contact Me
-          </a>
-
-          <a
-            // className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/4 dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-39.5"
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid px-5 transition-colors hover:border-transparent border-white/[.145] hover:bg-gray-700 md:w-39.5"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Projects
-          </a>
-        </div> */}
       </main>
     </div>
   );

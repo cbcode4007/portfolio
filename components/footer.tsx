@@ -7,11 +7,11 @@ const Footer = () => {
       <div className="mx-auto flex items-center justify-center p-4 gap-4">
         <Link target="_blank" href="https://github.com/cbcode4007" className="flex items-center gap-2">
           <Image
-            src="/github-white-icon.svg"
+            src="/git.png"
             alt="GitHub Logo"
             width={32}
             height={16}
-            className="transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"            
+            className="invert transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"            
           />
         </Link>
         <Link target="_blank" href="https://www.linkedin.com/in/colinbcode/" className="flex items-center gap-2">

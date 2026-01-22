@@ -64,7 +64,7 @@ function FlipCard({ skill, isFlipped, onFlip }: { skill: SkillCard; isFlipped: b
 
         {/* Back side */}
         <div
-          className="absolute w-full h-full bg-zinc-800 rounded-lg flex items-center justify-center p-6"
+          className="absolute w-full h-full bg-zinc-800 rounded-lg flex items-center justify-center p-6 hover:bg-gray-700 transition-colors duration:300 ease-out"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
@@ -153,7 +153,7 @@ export default function Skills() {
             {/* Left Arrow */}
             <button
               onClick={prevSlide}
-              className="p-2 hover:bg-gray-900 rounded-lg transition-colors"
+              className="p-2 hover:bg-gray-900 hover:scale-110 rounded-lg transition-all"
               aria-label="Previous skill"
             >
               <svg
@@ -197,7 +197,7 @@ export default function Skills() {
             {/* Right Arrow */}
             <button
               onClick={nextSlide}
-              className="p-2 hover:bg-gray-900 rounded-lg transition-colors"
+              className="p-2 hover:bg-gray-900 hover:scale-110 rounded-lg transition-all"
               aria-label="Next skill"
             >
               <svg

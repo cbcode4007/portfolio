@@ -2,6 +2,28 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+/* ------------------ TAGS ------------------ */
+
+type Tag =
+  | "python"
+  | "flutter"
+  | "sql"
+  | "ai"
+  | "desktop"
+  | "mobile";
+
+const TAG_ICONS: Record<Tag, string> = {
+  python: "/python-logo-monochrome.png",
+  flutter: "/flutter_logo_icon_214732.png",
+  sql: "/sql2.png",
+  ai: "/openai.png",
+  desktop: "/computer invert.png",
+  mobile: "/phone invert.png",
+};
+
+/* ------------------ DATA MODEL ------------------ */
 
 interface ProjectCard {
   id: number;
@@ -9,52 +31,172 @@ interface ProjectCard {
   imagePath: string;
   description: string;
   link: string;
-  icons: string[];
+  tags: Tag[];
 }
 
+/* ------------------ PROJECTS ------------------ */
+
 const projects: ProjectCard[] = [
-  { id: 1, name: "IXIXI'S AIRPORT APP", imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif", description: "A high quality proof of concept application for IxIxI Creator Lab, which would help file travelers into gates depending on how much time remains until their flight.", link: "#", icons:["/phone invert.png", "/flutter_logo_icon_214732.png"] },
-  { id: 2, name: "AI ENGLISH QUERY", imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif", description: "An interface that allows users to query a specified database in English. It uses AI to generate an SQL statement which will then execute by itself, and the results are returned for display.", link: "#", icons:["/computer invert.png", "/python-logo-monochrome.png", "/openai.png", "/sql2.png"] },
-  { id: 3, name: "HOME AI MAX", imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif", description: "A robust mobile interface that can be typed to or spoken to via its STT, and either speech activated by tap or a wake word, which will then send the input to a configured webhook of the user's choice, and reads server replies out loud, as well as accepting incoming POSTs in much the same way.", link: "#", icons:["/phone invert.png", "/flutter_logo_icon_214732.png"] },
-  { id: 4, name: "CHAT MAX", imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif", description: "Standalone desktop application that dabbles into prompt engineering based on settings in the program to simulate a highly customizable AI chat bot personality.", link: "#", icons:["/computer invert.png", "/python-logo-monochrome.png", "/openai.png"] },
-  { id: 5, name: "AI OPERATOR", imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif", description: "The underlying logic behind one of Home AI Max' endpoints, this program can use AI to call other compatible programs based on whichever input users give it.", link: "#", icons:["/computer invert.png", "/python-logo-monochrome.png", "/openai.png"] },
-  { id: 6, name: "AI BACKUP ANALYZER", imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif", description: "Built to run automatically on a schedule via CRON, the program takes a snippet of the backup log file it is given and uses AI to analyze it, returning a one word result which decides whether or not to send specific devices warning notifications through existing Home Assistant integrations.", link: "#", icons:["/computer invert.png", "/python-logo-monochrome.png", "/openai.png"] },
+  {
+    id: 1,
+    name: "IXIXI'S AIRPORT APP",
+    imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif",
+    description:
+      "A high quality proof of concept application for IxIxI Creator Lab, helping travelers route to gates based on remaining time.",
+    link: "https://github.com/cbcode4007/airport-travel-app",
+    tags: ["flutter", "mobile"],
+  },
+  {
+    id: 2,
+    name: "AI ENGLISH QUERY",
+    imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif",
+    description:
+      "Interface to query a database in English, and obtain formatted results. AI generates SQL and executes it programmatically, while results are handled by the application.",
+    link: "https://github.com/cbcode4007/ai-english-query",
+    tags: ["python", "sql", "ai", "desktop"],
+  },
+  {
+    id: 3,
+    name: "HOME AI MAX",
+    imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif",
+    description:
+      "Front-end application with STT, wake word support, and webhook-based automation.",
+    link: "https://github.com/cbcode4007/home-ai-max",
+    tags: ["flutter", "ai", "mobile"],
+  },
+  {
+    id: 4,
+    name: "CHAT MAX",
+    imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif",
+    description:
+      "Standalone application with AI chat and more importantly heavy customization for the agent's personality.",
+    link: "https://github.com/cbcode4007/chat-max",
+    tags: ["python", "ai", "desktop"],
+  },
+  {
+    id: 5,
+    name: "AI BACKUP ANALYZER",
+    imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif",
+    description:
+      "CRON-driven backup analyzer using AI to classify the day's log, and sends necessary alerts via Home Assistant.",
+    link: "https://github.com/cbcode4007/ai-backup-analyzer",
+    tags: ["python", "ai", "desktop"],
+  },
+  {
+    id: 6,
+    name: "AI OPERATOR",
+    imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif",
+    description:
+      "AI-driven command router capable of invoking other programs dynamically based on request contents.",
+    link: "https://github.com/cbcode4007/ai-operator",
+    tags: ["python", "ai", "desktop"],
+  },
+  {
+    id: 7,
+    name: "AI WEATHER REPORT",
+    imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif",
+    description:
+      "Small-scale AI agent with Environment Canada API data to answer weather-related queries, and is compatible for use as a part of AI Operator.",
+    link: "https://github.com/cbcode4007/ai-weather-report",
+    tags: ["python", "ai", "desktop"],
+  },
+  {
+    id: 8,
+    name: "AI NEWS REPORT",
+    imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif",
+    description:
+      "Small-scale AI agent with Home Assistant news API data to answer news-related queries, and is compatible for use as a part of AI Operator.",
+    link: "https://github.com/cbcode4007/ai-news-report",
+    tags: ["python", "ai", "desktop"],
+  },
+  {
+    id: 9,
+    name: "AI HAGPT",
+    imagePath: "/Computer-screen-code-glitch-animation-gif-background-free.gif",
+    description:
+      "Small-scale AI agent with Home Assistant integration to chat with the user or interact with smart devices on its network if it believes it was called for, and is compatible for use as a part of AI Operator.",
+    link: "https://github.com/cbcode4007/ai-hagpt",
+    tags: ["python", "ai", "desktop"],
+  },
 ];
 
+/* ------------------ COMPONENT ------------------ */
+
 export default function Projects() {
+  const [activeTags, setActiveTags] = useState<Tag[]>([]);
+
+  const filteredProjects = projects.filter(
+    (project) =>
+      activeTags.length === 0 ||
+      activeTags.every((tag) => project.tags.includes(tag))
+  );
 
   return (
-    <div className="flex h-[calc(100vh-56px)] flex-col items-center justify-center font-sans px-6">
-      <main className="flex w-full max-w-8xl flex-col items-center gap-12">
-        <div className="flex flex-col items-center gap-6">
-          <h1 className="text-4xl font-semibold tracking-tight text-zinc-50">
-            My Work            
-          </h1>
+    <div className="flex h-[calc(100vh-56px)] flex-col items-center justify-center px-6 pb-8">
+      <main className="flex w-full max-w-8xl flex-col items-center gap-10">
+        <h1 className="text-4xl font-semibold tracking-tight text-zinc-50 pb-2">
+          My Work
+        </h1>
+
+        {/* -------- TAG FILTER -------- */}
+        <div className="flex flex-wrap gap-3 justify-center">
+          {(Object.keys(TAG_ICONS) as Tag[]).map((tag) => {
+            const active = activeTags.includes(tag);
+
+            return (
+              <button
+                key={tag}
+                onClick={() =>
+                  setActiveTags((prev) =>
+                    active ? prev.filter((t) => t !== tag) : [...prev, tag]
+                  )
+                }
+                className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm
+                  transition-all
+                  ${
+                    active
+                      ? "bg-gray-900 text-zinc-300 scale-110 hover:bg-gray-700"
+                      : "bg-zinc-800 text-zinc-300 scale-100 hover:bg-gray-700"
+                  }`}
+              >
+                <Image
+                  src={TAG_ICONS[tag]}
+                  alt=""
+                  width={14}
+                  height={14}
+                  className="invert"
+                />
+                {tag}
+              </button>
+            );
+          })}
         </div>
 
-        <hr className="w-1/1 h-px bg-zinc-400 border-0" />
+        {/* -------- GRID -------- */}
+        <div className="grid grid-cols-3 gap-8 w-full h-155 overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent scroll-smooth pt-4 pb-4">
+          {filteredProjects.length === 0 ? (
+            <p className="text-zinc-400 col-span-3 text-center">
+              No projects match the selected tags.
+            </p>
+          ) : (
+            filteredProjects.map((project) => (
+            <Link target="_blank" href={`${project.link}`} key={project.id}>              
+              <div className="group relative bg-zinc-900 rounded-lg flex flex-col transition-all duration-300 hover:bg-gray-700 hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] h-68">
+                {/* IMAGE */}
+                <div className="relative w-full flex-1 overflow-hidden rounded-t-lg">
 
-        {/* Grid of 9 cards (3x3) */}
-        <div className="grid grid-cols-3 gap-8 w-full max-h-[calc(100vh-300px)] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 scroll-smooth">
-          {projects.map((project) => ( 
-
-            <Link href={project.link} key={project.id}>
-              <div                
-                className="relative bg-zinc-900 rounded-lg flex flex-col hover:bg-zinc-800 transition-colors h-75"
-              >
-                {/* Image = top half */}
-                <div className="relative max-h-1/2 w-full flex-1">
-                  <div className="absolute top-3 right-3 z-10 flex gap-2">
-                    {project.icons.map((icon, idx) => (
+                  {/* TAG ICONS */}
+                  <div className="absolute top-3 right-3 z-20 flex gap-2">
+                    {project.tags.map((tag) => (
                       <div
-                        key={idx}                        
-                        className="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md 
-                                  flex items-center justify-center
-                                  ring-1 ring-white/20 shadow-lg"
+                        key={`${project.id}-${tag}`}
+                        className="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md
+                                   flex items-center justify-center
+                                   ring-1 ring-white/20 shadow-lg"
                       >
                         <Image
-                          src={icon}
-                          alt=""
+                          src={TAG_ICONS[tag]}
+                          alt={tag}
                           width={18}
                           height={18}
                           className="object-contain invert"
@@ -65,37 +207,29 @@ export default function Projects() {
 
                   <Image
                     src={project.imagePath}
-                    alt={project.name}                  
+                    alt={project.name}
                     fill
                     className="object-cover"
                   />
                 </div>
+
                 <div className="h-px bg-zinc-800" />
 
-                {/* Content = bottom half */}
-                <div className="flex flex-col items-center p-6 max-h-1/2">
-                  <h2 className="text-lg font-semibold leading-tight text-zinc-50 mb-3">
+                {/* CONTENT */}
+                <div className="flex flex-col p-6 h-1/2">
+                  <h2 className="text-lg font-semibold text-zinc-50 mb-3">
                     {project.name}
                   </h2>
-
-                  <div className="flex flex-col space-y-4 w-full">
-                    <hr className="w-1/1 h-px bg-zinc-800 border-0" />                  
-                    <div className="text-xs text-zinc-300 flex flex-col items-start w-full max-h-7/10 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 scroll-smooth">
-                      {project.description.length > 0 ? (
-                        project.description
-                      ) : (
-                        <p className="text-zinc-400 italic">Projects coming soon...</p>
-                      )}
-                    </div>
-                  </div>
-
+                  <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 scroll-smooth">
+                    <p className="text-xs text-zinc-300 leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>                  
                 </div>
-
               </div>
             </Link>
-          ))}
+          )))}
         </div>
-
       </main>
     </div>
   );
