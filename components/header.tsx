@@ -11,9 +11,8 @@ export default function Header() {
             src="/logo.png"
             alt="Logo"
             width={108}
-            height={24}
-            // className="dark:invert"
-            className="invert transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] hover:scale-110"            
+            height={108}
+            className="invert object-contain transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] hover:scale-110"            
           />
         </Link>
 

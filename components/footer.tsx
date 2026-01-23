@@ -10,8 +10,8 @@ const Footer = () => {
             src="/git.png"
             alt="GitHub Logo"
             width={32}
-            height={16}
-            className="invert transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"            
+            height={32}
+            className="invert object-contain transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"            
           />
         </Link>
         <Link target="_blank" href="https://www.linkedin.com/in/colinbcode/" className="flex items-center gap-2">
@@ -19,8 +19,8 @@ const Footer = () => {
             src="/linkedin-icon-1-logo-svg-vector.svg"
             alt="LinkedIn Logo"
             width={32}
-            height={16}
-            className="invert transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"            
+            height={32}
+            className="invert object-contain transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]"            
           />
         </Link>
       </div>  

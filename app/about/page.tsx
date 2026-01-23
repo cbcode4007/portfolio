@@ -88,7 +88,6 @@ export default function About() {
               alt="Profile"
               width={512}
               height={340}
-              priority
               className="w-full h-full object-cover" />
           </div>
 

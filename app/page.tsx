@@ -17,7 +17,6 @@ export default function Home() {
                 alt="Profile"
                 width={256}
                 height={170}
-                priority
                 className="w-full h-full object-cover"
               />
             </div>
@@ -58,8 +57,8 @@ export default function Home() {
                   src="/python-logo-monochrome.png"
                   alt="Python Logo"
                   width={32}
-                  height={16}
-                  className="invert"
+                  height={32}
+                  className="invert object-contain"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400">
                   Python
@@ -70,8 +69,8 @@ export default function Home() {
                   src="/flutter_logo_icon_214732.png"
                   alt="Flutter Dart Logo"
                   width={32}
-                  height={16}
-                  className="invert"
+                  height={32}
+                  className="invert object-contain"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400">
                   Flutter Dart
@@ -82,8 +81,8 @@ export default function Home() {
                   src="/sql2.png"
                   alt="SQL Logo"
                   width={32}
-                  height={16}
-                  className="invert"
+                  height={32}
+                  className="invert object-contain"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400">
                   SQL
@@ -94,8 +93,8 @@ export default function Home() {
                   src="/free-typescript-logo-icon-svg-download-png-1982828.png"
                   alt="TypeScript Logo"
                   width={32}
-                  height={16}
-                  className="invert"
+                  height={32}
+                  className="invert object-contain"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400">
                   TypeScript
@@ -106,8 +105,8 @@ export default function Home() {
                   src="/css_tailwind_logo_icon_214735.png"
                   alt="Tailwind Logo"
                   width={32}
-                  height={16}
-                  className="invert"
+                  height={32}
+                  className="invert object-contain"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400">
                   Tailwind
@@ -118,8 +117,8 @@ export default function Home() {
                   src="/openai.png"
                   alt="OpenAI Logo"
                   width={32}
-                  height={16}
-                  className="invert"
+                  height={32}
+                  className="invert object-contain"
                 />
                 <p className="max-w-md text-m leading-8 text-zinc-400">
                   Agentic AI
@@ -149,8 +148,8 @@ export default function Home() {
                     src="/phone invert.png"
                     alt="Phone Icon"
                     width={32}
-                    height={16}
-                    className="invert"                  
+                    height={32}
+                    className="invert object-contain"                  
                   />
                   <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                     IxIxI's Airport App
@@ -164,8 +163,8 @@ export default function Home() {
                     src="/computer invert.png"
                     alt="PC Icon"
                     width={32}
-                    height={16}
-                    className="invert"
+                    height={32}
+                    className="invert object-contain"
                   />
                   <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                     AI English Query
@@ -179,8 +178,8 @@ export default function Home() {
                     src="/phone invert.png"
                     alt="Phone Icon"
                     width={32}
-                    height={16}
-                    className="invert"
+                    height={32}
+                    className="invert object-contain"
                   />
                   <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                     Home AI Max
@@ -194,8 +193,8 @@ export default function Home() {
                     src="/computer invert.png"
                     alt="PC Icon"
                     width={32}
-                    height={16}
-                    className="invert"
+                    height={32}
+                    className="invert object-contain"
                   />
                   <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                     Chat Max
@@ -209,8 +208,8 @@ export default function Home() {
                     src="/computer invert.png"
                     alt="PC Icon"
                     width={32}
-                    height={16}
-                    className="invert"
+                    height={32}
+                    className="invert object-contain"
                   />
                   <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                     AI Operator
@@ -224,8 +223,8 @@ export default function Home() {
                     src="/computer invert.png"
                     alt="PC Icon"
                     width={32}
-                    height={16}
-                    className="invert"
+                    height={32}
+                    className="invert object-contain"
                   />
                   <p className="max-w-md text-m leading-8 text-zinc-400 hover:text-white">
                     AI Backup Analyzer

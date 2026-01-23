@@ -209,11 +209,13 @@ export default function Projects() {
                     src={project.imagePath}
                     alt={project.name}
                     fill
+                    sizes="128px"
                     className="object-cover"
+                    loading="eager"
                   />
                 </div>
 
-                <div className="h-px bg-zinc-800" />
+                <div className="h-px bg-zinc-800 group-hover:bg-zinc-400 transition-all duration-300" />
 
                 {/* CONTENT */}
                 <div className="flex flex-col p-6 h-1/2">

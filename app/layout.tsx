@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden`}
       >
-        <div className="min-h-screen font-sans bg-linear-to-b from-black to-transparent">
+        <div className="min-h-screen font-sans bg-linear-to-b from-black to-transparent relative">
           <Header />
           <Image
             src="/source.gif"
@@ -38,7 +38,6 @@ export default function RootLayout({
             fill
             className="object-cover absolute inset-0 -z-10 opacity-10"
             unoptimized={true}
-            priority
           />
           {children}
           <Footer />
