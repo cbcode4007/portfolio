@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 /* Tags metadata */
-
 type Tag =
   | "python"
   | "flutter"
@@ -27,8 +26,7 @@ const TAG_ICONS: Record<Tag, string> = {
   mobile: "/phone invert.png",
 };
 
-/* Tags interface models */
-
+/* Project interface models */
 interface ProjectCard {
   id: number;
   name: string;
@@ -39,7 +37,6 @@ interface ProjectCard {
 }
 
 /* Project entries */
-
 const projects: ProjectCard[] = [
   {
     id: 1,
@@ -144,103 +141,151 @@ export default function Projects() {
   );
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 px-4 md:px-0">
       {/* Tag interface */}
       <div className="flex flex-wrap gap-3 justify-center">
-          {(Object.keys(TAG_ICONS) as Tag[]).map((tag) => {
-            const active = activeTags.includes(tag);
-
-            return (
-                <button
-                    key={tag}
-                    onClick={() =>
-                        setActiveTags((prev) =>
-                        active ? prev.filter((t) => t !== tag) : [...prev, tag]
-                        )
-                    }
-                    className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm
-                        transition-all
-                        ${
-                        active
-                            ? "bg-gray-900 text-zinc-300 scale-110 hover:bg-gray-700"
-                            : "bg-zinc-800 text-zinc-300 scale-100 hover:bg-gray-700"
-                        }`}
-                    >
-                    <Image
-                        src={TAG_ICONS[tag]}
-                        alt=""
-                        width={14}
-                        height={14}
-                        className="invert"
-                    />
-                    {tag}
-                </button>
-            );
-          })}
+        {(Object.keys(TAG_ICONS) as Tag[]).map((tag) => {
+          const active = activeTags.includes(tag);
+          return (
+            <button
+              key={tag}
+              onClick={() =>
+                setActiveTags((prev) =>
+                  active ? prev.filter((t) => t !== tag) : [...prev, tag]
+                )
+              }
+              className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm transition-all ${
+                active
+                  ? "bg-gray-900 text-zinc-300 scale-110 hover:bg-gray-700"
+                  : "bg-zinc-800 text-zinc-300 scale-100 hover:bg-gray-700"
+              }`}
+            >
+              <Image
+                src={TAG_ICONS[tag]}
+                alt=""
+                width={14}
+                height={14}
+                className="invert"
+              />
+              {tag}
+            </button>
+          );
+        })}
       </div>
 
-      {/* Project interface grid */}
-      <div className="grid grid-cols-3 gap-8 w-full h-155 overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent md:scroll-smooth pt-4 pb-4">
+      {/* Desktop grid */}
+      <div className="hidden md:grid grid-cols-3 gap-8 w-full h-155 overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent md:scroll-smooth pt-4 pb-4">
         {filteredProjects.length === 0 ? (
-        <p className="text-zinc-400 col-span-3 text-center">
+          <p className="text-zinc-400 col-span-3 text-center">
             No projects match the selected tags.
-        </p>
+          </p>
         ) : (
-
-        // Project interface entries
-        filteredProjects.map((project) => (
-            <Link target="_blank" href={`${project.link}`} key={project.id}>              
-                <div className="group relative bg-zinc-900 rounded-lg flex flex-col transition-all duration-300 hover:bg-gray-700 hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] h-68">
-                    
-                    {/* Project image */}
-                    <div className="relative w-full flex-1 overflow-hidden rounded-t-lg">
-
-                        {/* Tag icons */}
-                        <div className="absolute top-3 right-3 z-20 flex gap-2">
-                            {project.tags.map((tag) => (
-                                <div
-                                key={`${project.id}-${tag}`}
-                                className="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md
-                                            flex items-center justify-center
-                                            ring-1 ring-white/20 shadow-lg"
-                                >
-                                <Image
-                                    src={TAG_ICONS[tag]}
-                                    alt={tag}
-                                    width={18}
-                                    height={18}
-                                    className="object-contain invert"
-                                />
-                                </div>
-                            ))}
-                        </div>
-
+          filteredProjects.map((project) => (
+            <Link target="_blank" href={`${project.link}`} key={project.id}>
+              <div className="group relative bg-zinc-900 rounded-lg flex flex-col transition-all duration-300 hover:bg-gray-700 hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] h-68">
+                {/* Project image */}
+                <div className="relative w-full flex-1 overflow-hidden rounded-t-lg">
+                  {/* Tag icons */}
+                  <div className="absolute top-3 right-3 z-20 flex gap-2">
+                    {project.tags.map((tag) => (
+                      <div
+                        key={`${project.id}-${tag}`}
+                        className="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center ring-1 ring-white/20 shadow-lg"
+                      >
                         <Image
-                        src={project.imagePath}
-                        alt={project.name}
-                        fill
-                        sizes="128px"
-                        className="object-cover"
-                        loading="eager"
+                          src={TAG_ICONS[tag]}
+                          alt={tag}
+                          width={18}
+                          height={18}
+                          className="object-contain invert"
                         />
-                    </div>
-
-                    <div className="h-px bg-zinc-800 group-hover:bg-zinc-400 transition-all duration-300" />
-
-                    {/* Content */}
-                    <div className="flex flex-col p-6 h-1/2">
-                        <h2 className="text-lg font-semibold text-zinc-50 mb-3">
-                            {project.name}
-                        </h2>
-                        <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 md:scroll-smooth">
-                            <p className="text-xs text-zinc-300 leading-relaxed">
-                                {project.description}
-                            </p>
-                        </div>                  
-                    </div>
+                      </div>
+                    ))}
+                  </div>
+                  <Image
+                    src={project.imagePath}
+                    alt={project.name}
+                    fill
+                    sizes="128px"
+                    className="object-cover"
+                    loading="eager"
+                  />
                 </div>
-            </Link>            
-        )))}
+                <div className="h-px bg-zinc-800 group-hover:bg-zinc-400 transition-all duration-300" />
+
+                {/* Content */}
+                <div className="flex flex-col p-6 h-1/2">
+                  <h2 className="text-lg font-semibold text-zinc-50 mb-3">
+                    {project.name}
+                  </h2>
+                  <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 md:scroll-smooth">
+                    <p className="text-xs text-zinc-300 leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))
+        )}
+      </div>
+
+      {/* Mobile scrollable column */}
+      <div className="space-y-8"></div>
+
+      <div className="flex flex-col md:hidden gap-4 w-full max-h-64 overflow-y-auto pb-8 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
+        {filteredProjects.length === 0 ? (
+          <p className="text-zinc-400 text-center">
+            No projects match the selected tags.
+          </p>
+        ) : (
+          filteredProjects.map((project) => (
+            <Link target="_blank" href={`${project.link}`} key={project.id}>
+              <div className="group relative bg-zinc-900 rounded-lg h-64 flex flex-col transition-all duration-300 hover:bg-gray-700 hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)]">
+                {/* Project image */}
+                <div className="relative w-full overflow-hidden rounded-t-lg h-1/2">
+                  {/* Tag icons */}
+                  <div className="absolute top-3 right-3 z-20 flex gap-2">
+                    {project.tags.map((tag) => (
+                      <div
+                        key={`${project.id}-${tag}`}
+                        className="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center ring-1 ring-white/20 shadow-lg"
+                      >
+                        <Image
+                          src={TAG_ICONS[tag]}
+                          alt={tag}
+                          width={18}
+                          height={18}
+                          className="object-contain invert"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <Image
+                    src={project.imagePath}
+                    alt={project.name}
+                    fill
+                    sizes="128px"
+                    className="object-cover"
+                    loading="eager"
+                  />
+                </div>
+
+                <div className="h-1 bg-zinc-800 group-hover:bg-zinc-400 transition-all duration-300" />
+
+                {/* Content */}
+                <div className="flex flex-col p-4 h-1/2 overflow-y-auto">
+                  <h2 className="text-lg font-semibold text-zinc-50 mb-2">
+                    {project.name}
+                  </h2>
+                  <p className="text-xs text-zinc-300 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))
+        )}
       </div>
     </div>
   );
