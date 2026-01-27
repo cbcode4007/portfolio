@@ -156,8 +156,8 @@ export default function Projects() {
               }
               className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm transition-all ${
                 active
-                  ? "bg-gray-900 text-zinc-300 scale-110 hover:bg-gray-700"
-                  : "bg-zinc-800 text-zinc-300 scale-100 hover:bg-gray-700"
+                  ? "bg-gray-900 text-zinc-300 scale-110 md:hover:bg-gray-700"
+                  : "bg-zinc-800 text-zinc-300 scale-100 md:hover:bg-gray-700"
               }`}
             >
               <Image
@@ -241,7 +241,7 @@ export default function Projects() {
         ) : (
           filteredProjects.map((project) => (
             <Link target="_blank" href={`${project.link}`} key={project.id}>
-              <div className="group relative bg-zinc-900 rounded-lg h-64 flex flex-col transition-all duration-300 hover:bg-gray-700 hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)]">
+              <div className="group relative bg-zinc-900 rounded-lg h-64 flex flex-col transition-all duration-300">
                 {/* Project image */}
                 <div className="relative w-full overflow-hidden rounded-t-lg h-1/2">
                   {/* Tag icons */}
@@ -271,7 +271,7 @@ export default function Projects() {
                   />
                 </div>
 
-                <div className="h-1 bg-zinc-800 group-hover:bg-zinc-400 transition-all duration-300" />
+                <div className="h-1 bg-zinc-800 transition-all duration-300" />
 
                 {/* Content */}
                 <div className="flex flex-col p-4 h-1/2 overflow-y-auto">

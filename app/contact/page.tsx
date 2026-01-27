@@ -54,7 +54,9 @@ export default function Contact() {
         </div>
 
         {/* Right Form */}
-        <ContactClient />
+        <div className="hidden md:flex">
+          <ContactClient />
+        </div>
 
       </main>
     </div>

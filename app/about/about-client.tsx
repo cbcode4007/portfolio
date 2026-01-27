@@ -116,7 +116,7 @@ export default function AboutClient() {
         <h2 className="text-xl font-semibold leading-10 tracking-wide text-zinc-50 mt-8">
           EXPERIENCE
         </h2>
-        <p className="mt-6 max-w-md text-lg leading-8 text-zinc-400 pb-8">
+        <p className="mt-6 max-w-md text-lg leading-8 text-zinc-400">
           Over the past year from graduation, I have had the opportunity and pleasure to continue working toward pushing IT solutions. Most notably, during a one-month internship for IxIxI Creator Lab, I was able to deliver a Flutter Dart mobile application for their flight service which earned such praise and approval that it was favoured over those of the other Durham College candidates. Here, I was able to take the opportunity practicing and honing my agile development skills, going in sprints before receiving more feature requests. Since then, I've been consistently creating new applications on a regular basis leveraging different technologies, including Python, Flutter Dart, SQL, Next.js framework (with TypeScript and Tailwind), and AI agents in code.
         </p>
       </div>
