@@ -48,7 +48,7 @@ export default function AboutClient() {
       ref={contentRef}
       className="flex-1 overflow-y-auto w-full flex flex-col items-center max-h-[45vh]
                  scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent
-                 px-2 scroll-smooth"
+                 px-2 md:scroll-smooth"
     >
         <p className="mt-6 max-w-md text-lg leading-8 text-zinc-400 pb-8">
             Welcome to my portfolio website! I'm Colin, a professional IT solutions developer dedicated to crafting a variety of engaging, cutting-edge, and reliable applications. Whether you're an individual or a business, and whether it's a desktop, web or mobile app, I'm here to make it come to life. With an ever-burning passion for technology and innovation, I am always learning, mastering, and doing something new, so you can bet that I'll deliver a tailored solution to meet and exceed your unique needs. Explore my work and give me a call or email to see how I could help you!

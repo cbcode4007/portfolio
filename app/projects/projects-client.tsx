@@ -180,7 +180,7 @@ export default function Projects() {
       </div>
 
       {/* Project interface grid */}
-      <div className="grid grid-cols-3 gap-8 w-full h-155 overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent scroll-smooth pt-4 pb-4">
+      <div className="grid grid-cols-3 gap-8 w-full h-155 overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent md:scroll-smooth pt-4 pb-4">
         {filteredProjects.length === 0 ? (
         <p className="text-zinc-400 col-span-3 text-center">
             No projects match the selected tags.
@@ -232,7 +232,7 @@ export default function Projects() {
                         <h2 className="text-lg font-semibold text-zinc-50 mb-3">
                             {project.name}
                         </h2>
-                        <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 scroll-smooth">
+                        <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 md:scroll-smooth">
                             <p className="text-xs text-zinc-300 leading-relaxed">
                                 {project.description}
                             </p>

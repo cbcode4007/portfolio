@@ -52,7 +52,7 @@ function FlipCard({ skill, isFlipped, onFlip }: { skill: SkillCard; isFlipped: b
             {skill.projects.length > 0 ? (
               <div>
                 <p className="font-semibold mb-1">Projects:</p>
-                <div className="space-y-1 items-start max-h-16 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 scroll-smooth">
+                <div className="space-y-1 items-start max-h-16 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 md:scroll-smooth">
                   {skill.projects.map((project, idx) => (
                     <p key={idx}>{project}</p>
                   ))}
