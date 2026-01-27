@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex h-[calc(100vh-56px)] items-center justify-center font-sans overflow-y-auto">
       <main className="flex w-full max-w-3xl flex-col items-center gap-8 px-16 text-center">
 
-        <div className="flex flex-col items-center pt-24">
+        <div className="flex flex-col items-center pt-0 md:pt-24">
           <h1 className=" text-3xl font-semibold leading-10 tracking-tight text-zinc-50">
             Colin Bond
           </h1>          
@@ -26,7 +26,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mx-auto flex max-w-7xl flex-row items-start justify-center flex-nowrap pb-8">
+        <div className="hidden md:flex mx-auto max-w-7xl flex-row items-start justify-center flex-nowrap pb-8">
 
           <div className="flex flex-col justify-center items-center gap-1 flex-1 min-w-0">
             <h2 className="text-xl font-semibold leading-10 tracking-wide text-zinc-50">

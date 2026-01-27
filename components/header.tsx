@@ -14,13 +14,13 @@ export default function Header() {
       <header className="fixed top-0 z-50 w-full p-8">
         <div className="mx-auto flex h-14 w-full items-center justify-between select-none">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="hidden md:flex items-center">
             <Image
               src="/logo.png"
               alt="Logo"
               width={108}
               height={108}
-              className="hidden md:object-contain transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] hover:scale-110"
+              className="object-contain transition-all duration-300 ease-out hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] hover:scale-110"
             />
           </Link>
 

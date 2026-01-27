@@ -8,12 +8,13 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="flex h-[calc(100vh-56px)] font-sans items-center justify-center">
-      <main className="flex w-full max-w-6xl flex-row items-center justify-between gap-12 px-16">
+    <div className="flex min-h-screen font-sans">
+      <main className="flex flex-col md:flex-row w-full max-w-6xl mx-auto px-6 md:px-16 gap-8 md:gap-12">
 
         {/* Left side */}
-        <div className="flex flex-1 flex-col items-center h-full">
-          <div className="flex items-center justify-center sticky top-0 z-10 py-4">
+        <div className="flex flex-1 flex-col items-center md:items-start">
+          {/* Sticky title only on desktop */}
+          <div className="hidden md:flex items-center justify-center sticky top-0 z-10 py-4 w-full">
             <h1 className="text-3xl font-semibold text-zinc-50">
               About Me
             </h1>
@@ -21,12 +22,11 @@ export default function About() {
 
           {/* Client owns scrolling */}
           <AboutClient />
-          
         </div>
 
-        {/* Right side */}
-        <div className="flex flex-1 flex-col items-center justify-center gap-8 pt-16">
-          <div className="w-92 h-92 overflow-hidden glowing-border rounded-2xl">
+        {/* Right side (profile image) */}
+        <div className="flex flex-1 items-center justify-center md:justify-end pt-8 md:pt-16">
+          <div className="w-64 h-64 md:w-92 md:h-92 overflow-hidden glowing-border rounded-2xl">
             <Image
               src="/profile.png"
               alt="Profile"
