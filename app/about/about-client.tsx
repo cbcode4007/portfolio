@@ -72,7 +72,7 @@ export default function AboutClient() {
         </div>
 
         {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto px-6 pb-24 max-h-64 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
+        <div className="flex-1 overflow-y-auto px-6 pb-16 max-h-64 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
           <p className="mt-6 text-base leading-7 text-zinc-400">
             Welcome to my portfolio website! I'm Colin, a professional IT solutions developer dedicated to crafting a variety of engaging, cutting-edge, and reliable applications. Whether you're an individual or a business, and whether it's a desktop, web or mobile app, I'm here to make it come to life. With an ever-burning passion for technology and innovation, I am always learning, mastering, and doing something new, so you can bet that I'll deliver a tailored solution to meet and exceed your unique needs. Explore my work and give me a call or email to see how I could help you!
           </p>
