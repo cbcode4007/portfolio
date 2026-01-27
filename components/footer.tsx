@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="text-zinc-400 p-4 fixed bottom-0 w-full">
+    <footer className="text-zinc-400 p-4 fixed bottom-0 w-full select-none">
       <div className="mx-auto flex items-center justify-center p-4 gap-4">
         <Link target="_blank" href="https://github.com/cbcode4007" className="flex items-center gap-2">
           <Image

@@ -5,7 +5,7 @@ import NavLink from "./navlink";
 export default function Header() {
   return (
     <header className="w-full p-8 fixed">
-      <div className="mx-auto flex h-14 items-center justify-between w-full">
+      <div className="mx-auto flex h-14 items-center justify-between w-full select-none">
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"

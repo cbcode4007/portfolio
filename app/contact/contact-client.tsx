@@ -22,35 +22,36 @@ export default function ContactClient() {
 return (
     <div className="flex flex-col justify-center items-center gap-4 bg-gray-900 h-full w-full outline-1 outline-gray-700 pt-10">
 
-        <form className="flex flex-col w-2xl justify-center items-center gap-4" onSubmit={handleSubmit}>
+        <form className="flex flex-col w-full max-w-xl mx-auto gap-6" onSubmit={handleSubmit}>
+        
+          {/* Names */}
+          <div className="flex w-full gap-4">
+              <div className="flex flex-col gap-2 text-sm flex-1">
+                <p>First name</p>
+                <input 
+                    id="frm-first"                  
+                    type="text"
+                    name="first"
+                    autoComplete="given-name"
+                    className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                />
+              </div>            
+              <div className="flex flex-col gap-2 text-sm flex-1">
+                <p>Last name</p>
+                <input 
+                    id="frm-last"
+                    type="text"
+                    name="last"
+                    autoComplete="family-name"
+                    className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    required
+                />
+              </div>            
+          </div>
 
-        <div className="flex flex-row w-full justify-center items-center gap-26">
-            <div className="flex flex-col gap-2 text-sm">
-            <p>First name</p>
-            <input 
-                id="frm-first"                  
-                type="text"
-                name="first"
-                autoComplete="given-name"
-                className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                required
-            />
-            </div>            
-            <div className="flex flex-col gap-2 text-sm">
-            <p>Last name</p>
-            <input 
-                id="frm-last"
-                type="text"
-                name="last"
-                autoComplete="family-name"
-                className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                required
-            />
-            </div>            
-        </div>
-
-        <div className="flex flex-row">
-            <div className="flex flex-col gap-2 text-sm w-xl">
+          {/* Email */}
+          <div className="flex flex-col gap-2 text-sm w-full">
             <p>Email</p>
             <input 
                 id="email"
@@ -60,11 +61,10 @@ return (
                 className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
             />
-            </div>
-        </div>
+          </div>
 
-        <div className="flex flex-row">
-            <div className="flex flex-col gap-2 text-sm w-xl">
+          {/* Phone */}
+          <div className="flex flex-col gap-2 text-sm w-full">
             <p>Phone</p>
             <input 
                 id="frm-phone"
@@ -74,24 +74,22 @@ return (
                 className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 required
             />
-            </div>
-        </div>
+          </div>
 
-        <div className="flex flex-row">
-            <div className="flex flex-col gap-2 text-sm w-xl">
+          {/* Message */}
+          <div className="flex flex-col gap-2 text-sm w-full">
             <p>Message</p>
             <textarea
                 id="frm-message"                  
                 name="message"
                 className="w-full h-20 py-3 px-4 text-gray-700 bg-white border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
-            </div>
-        </div>
+          </div>
 
-        <div className="flex flex-row gap-4 pt-6">              
-            <button 
-            type="submit" className="flex h-12 w-24 items-center justify-center gap-2 rounded-lg border border-solid px-5 transition-colors hover:border-transparent border-white/[.145] hover:bg-gray-700 md:w-39.5 text-sm">Send Message</button>
-        </div>
+          {/* Submit */}
+          <div className="flex flex-col gap-2 text-sm w-full pt-6">              
+              <button type="submit" className=" self-end flex h-12 w-24 items-center justify-center gap-2 rounded-lg border border-solid px-5 transition-colors hover:border-transparent border-white/[.145] hover:bg-gray-700 md:w-39.5 text-sm">Send Message</button>
+          </div>
 
         </form>
                 

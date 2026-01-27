@@ -25,8 +25,8 @@ export default function About() {
         </div>
 
         {/* Right side */}
-        <div className="flex flex-1 flex-col items-center justify-center gap-8 pt-25">
-          <div className="w-64 h-64 overflow-hidden rounded-full glowing-border">
+        <div className="flex flex-1 flex-col items-center justify-center gap-8 pt-16">
+          <div className="w-92 h-92 overflow-hidden glowing-border rounded-2xl">
             <Image
               src="/profile.png"
               alt="Profile"

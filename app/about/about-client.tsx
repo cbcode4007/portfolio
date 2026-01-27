@@ -51,7 +51,7 @@ export default function AboutClient() {
                  px-2 scroll-smooth"
     >
         <p className="mt-6 max-w-md text-lg leading-8 text-zinc-400 pb-8">
-            Welcome to my portfolio website! I'm Colin, a professional IT solutions developer dedicated to crafting a variety of engaging and cutting-edge applications for my clients. Whether you're an individual or a business, and whether it's a desktop, web or mobile app, I'm here to make it come to life. With an ever-burning passion for technology and innovation, I am always learning, mastering, and doing something new, so you can bet that I'll deliver a tailored solution to meet and exceed your unique needs. Explore my work and give me a call or email to see how I could help you!
+            Welcome to my portfolio website! I'm Colin, a professional IT solutions developer dedicated to crafting a variety of engaging, cutting-edge, and reliable applications. Whether you're an individual or a business, and whether it's a desktop, web or mobile app, I'm here to make it come to life. With an ever-burning passion for technology and innovation, I am always learning, mastering, and doing something new, so you can bet that I'll deliver a tailored solution to meet and exceed your unique needs. Explore my work and give me a call or email to see how I could help you!
         </p>
         <h2 className="text-xl font-semibold leading-10 tracking-wide text-zinc-50 mt-8">
             EDUCATION

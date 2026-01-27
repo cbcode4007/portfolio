@@ -13,7 +13,7 @@ export default function Contact() {
       <main className="flex h-full w-full flex-row">
 
         {/* Left Background */}        
-        <div className="flex flex-col justify-center items-center gap-6 h-full w-full pb-26">
+        <div className="flex flex-col justify-center items-center gap-6 h-full w-full pb-20">
           <h1 className="text-3xl font-semibold leading-10 tracking-tight text-zinc-50 pb-2">
             Contact Me
           </h1>
