@@ -174,7 +174,7 @@ export default function Projects() {
       </div>
 
       {/* Desktop grid */}
-      <div className="hidden md:grid grid-cols-3 gap-8 w-full h-155 overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent md:scroll-smooth pt-4 pb-4">
+      <div className="hidden md:grid grid-cols-3 gap-8 w-full h-152 overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent md:scroll-smooth pt-12">
         {filteredProjects.length === 0 ? (
           <p className="text-zinc-400 col-span-3 text-center">
             No projects match the selected tags.

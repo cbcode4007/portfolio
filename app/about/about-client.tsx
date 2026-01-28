@@ -54,7 +54,7 @@ export default function AboutClient() {
           =========================== */}
       <div className="flex flex-col min-h-screen pt-28 md:hidden">
         {/* Sticky header: profile image + ABOUT ME */}
-        <div className="sticky top-28 z-10 bg-black px-6 pb-4">
+        <div className="sticky top-28 z-10 bg-black px-6 pb-7">
           <div className="flex flex-col items-center gap-4">
             <div className="w-32 h-32 rounded-full overflow-hidden glowing-border">
               <Image
@@ -65,15 +65,15 @@ export default function AboutClient() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h2 className="text-xl font-semibold tracking-wide text-zinc-50">
-              ABOUT ME
+            <h2 className="text-2xl font-semibold tracking-wide text-zinc-50">
+              About Me
             </h2>
           </div>
         </div>
 
         {/* Scrollable content */}
         <div className="flex-1 overflow-y-auto px-6 pb-16 max-h-64 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
-          <p className="mt-6 text-base leading-7 text-zinc-400">
+          <p className="mt-4 text-base leading-7 text-zinc-400">
             Welcome to my portfolio website! I'm Colin, a professional IT solutions developer dedicated to crafting a variety of engaging, cutting-edge, and reliable applications. Whether you're an individual or a business, and whether it's a desktop, web or mobile app, I'm here to make it come to life. With an ever-burning passion for technology and innovation, I am always learning, mastering, and doing something new, so you can bet that I'll deliver a tailored solution to meet and exceed your unique needs. Explore my work and give me a call or email to see how I could help you!
           </p>
 

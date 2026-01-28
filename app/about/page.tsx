@@ -12,7 +12,7 @@ export default function About() {
       <main className="flex flex-col md:flex-row w-full max-w-6xl mx-auto px-6 md:px-16 gap-8 md:gap-12">
 
         {/* Left side */}
-        <div className="flex flex-1 flex-col items-center md:items-start">
+        <div className="flex flex-1 flex-col items-center md:items-start md:justify-center">
           {/* Sticky title only on desktop */}
           <div className="hidden md:flex items-center justify-center sticky top-0 z-10 py-4 w-full">
             <h1 className="text-3xl font-semibold text-zinc-50">
