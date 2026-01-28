@@ -156,8 +156,8 @@ export default function Projects() {
               }
               className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm transition-all ${
                 active
-                  ? "bg-gray-900 text-zinc-300 scale-110 md:hover:bg-gray-700"
-                  : "bg-zinc-800 text-zinc-300 scale-100 md:hover:bg-gray-700"
+                  ? "bg-gray-700 text-zinc-300 scale-110 md:hover:bg-zinc-400"
+                  : "bg-zinc-800 text-zinc-300 scale-100 md:hover:bg-zinc-400"
               }`}
             >
               <Image

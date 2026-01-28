@@ -118,7 +118,6 @@ export default function ContactClient() {
               name="phone"
               autoComplete="tel"
               className="w-full px-2 py-1 text-gray-700 bg-white border border-gray-300 rounded text-xs focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              required
             />
           </div>
 
@@ -215,7 +214,6 @@ export default function ContactClient() {
                 name="phone"
                 autoComplete="tel"
                 className="w-full px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                required
             />
           </div>
 
@@ -231,7 +229,7 @@ export default function ContactClient() {
 
           {/* Submit */}
           <div className="flex flex-col gap-2 text-sm w-full pt-6">              
-              <button type="submit" className=" self-end flex h-12 w-24 items-center justify-center gap-2 rounded-lg border border-solid px-5 transition-colors hover:border-transparent border-white/[.145] hover:bg-zinc-400 md:w-39.5 text-sm">Send Message</button>
+              <button type="submit" className="self-end flex h-12 w-24 items-center justify-center gap-2 rounded-lg px-5 transition-colors bg-gray-900 hover:bg-zinc-400 active:bg- md:w-39.5 text-sm">Send Message</button>
           </div>
 
         </form>

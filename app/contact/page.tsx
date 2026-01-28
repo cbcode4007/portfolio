@@ -13,7 +13,7 @@ export default function Contact() {
       <main className="flex h-full w-full flex-row">
 
         {/* Left Background - Desktop Only */}        
-        <div className="hidden w-full md:flex flex-col justify-center items-center gap-6 h-full md:w-1/2 pb-20">
+        <div className="hidden w-full md:flex flex-col justify-center items-center gap-6 h-full md:w-1/2 pb-32">
           <h1 className="text-3xl font-semibold leading-10 tracking-tight text-zinc-50 pb-2">
             Contact Me
           </h1>
@@ -25,32 +25,6 @@ export default function Contact() {
               height={340}
               className="w-full h-full object-cover" />
           </div>
-          
-          <div className="flex flex-col">
-            <a
-              className="flex h-12 w-full items-center justify-start gap-4"
-            >
-              <Image
-                src="/call_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-                alt="Phone icon"
-                width={32}
-                height={32}
-              />
-              +1 (289) 943-1007
-            </a>
-            <a
-              className="flex h-12 w-full items-center justify-start gap-4"
-            >
-              <Image
-                src="/mail_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-                alt="Email icon"
-                width={32}
-                height={32}
-              />
-              colin.bond@dcmail.ca
-            </a>
-          </div>
-
         </div>
 
         {/* Form - Full width on mobile, right side on desktop */}
