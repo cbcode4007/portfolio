@@ -6,6 +6,7 @@ import { useRef } from "react";
 export default function ContactClient() {
   const formRef = useRef<HTMLFormElement>(null);
 
+  /* Submit Button Handling (Explicit Submission to address potential button issues) */
   async function handleSubmit(e: { preventDefault: () => void; currentTarget: HTMLFormElement | undefined; }) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
@@ -47,26 +48,7 @@ export default function ContactClient() {
         </div>
 
         {/* Contact Information */}
-        <div className="flex flex-col items-center gap-3 px-4 pt-4 pb-6">
-          <a className="flex items-center justify-start gap-2 text-sm text-zinc-400">
-            <Image
-              src="/call_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-              alt="Phone icon"
-              width={20}
-              height={20}
-            />
-            +1 (289) 943-1007
-          </a>
-          <a className="flex items-center justify-center gap-2 text-sm text-zinc-400">
-            <Image
-              src="/mail_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-              alt="Email icon"
-              width={20}
-              height={20}
-            />
-            colin.bond@dcmail.ca
-          </a>
-        </div>
+        <div className="flex flex-col items-center gap-3 px-4 pt-4 pb-6"/>
 
         {/* Form - Bottom Half */}
         <form className="flex flex-col gap-3 px-6 max-w-full" onSubmit={handleSubmit} ref={formRef}>

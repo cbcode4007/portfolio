@@ -6,6 +6,7 @@ export default function Home() {
     <div className="flex h-[calc(100vh-56px)] items-center justify-center font-sans overflow-y-auto">
       <main className="flex w-full max-w-3xl flex-col items-center gap-8 px-16 text-center">
 
+        {/* Title, Picture and Subtitle */}
         <div className="flex flex-col items-center pt-0 md:pt-24">
           <h1 className=" text-3xl font-semibold leading-10 tracking-tight text-zinc-50">
             Colin Bond
@@ -26,8 +27,10 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Section Row */}
         <div className="hidden md:flex mx-auto max-w-7xl flex-row items-start justify-center flex-nowrap">
 
+          {/* About Section Columns */}
           <div className="flex flex-col justify-center items-center gap-1 flex-1 min-w-0">
             <h2 className="text-xl font-semibold leading-10 tracking-wide text-zinc-50">
               ABOUT ME
@@ -39,12 +42,14 @@ export default function Home() {
 
           </div>
 
+          {/* Skills Section Columns */}
           <div className="flex flex-col justify-center items-center gap-1 flex-1 min-w-0">
             <h2 className="text-xl font-semibold leading-10 tracking-wide text-zinc-50">
               MY SPECIALTIES
             </h2>
              <div className="flex space-y-2"/>
             <div className="flex flex-col justify-start items-start gap-1 flex-1 min-w-0">
+
               <div className="flex flex-row gap-2">
                 <Image
                   src="/python-logo-monochrome.png"
@@ -56,7 +61,8 @@ export default function Home() {
                 <p className="max-w-md text-m leading-8 text-zinc-400">
                   Python
                 </p>
-              </div>            
+              </div>   
+
               <div className="flex flex-row gap-2">
                 <Image
                   src="/flutter_logo_icon_214732.png"
@@ -68,7 +74,8 @@ export default function Home() {
                 <p className="max-w-md text-m leading-8 text-zinc-400">
                   Flutter Dart
                 </p>
-              </div>     
+              </div>    
+
               <div className="flex flex-row gap-2">
                 <Image
                   src="/sql2.png"
@@ -81,6 +88,7 @@ export default function Home() {
                   SQL
                 </p>
               </div>
+
               <div className="flex flex-row gap-2">
                 <Image
                   src="/free-typescript-logo-icon-svg-download-png-1982828.png"
@@ -93,6 +101,7 @@ export default function Home() {
                   TypeScript
                 </p>
               </div>
+
               <div className="flex flex-row gap-2">
                 <Image
                   src="/css_tailwind_logo_icon_214735.png"
@@ -105,6 +114,7 @@ export default function Home() {
                   Tailwind
                 </p>                                
               </div>
+
               <div className="flex flex-row gap-2">
                 <Image
                   src="/openai.png"
@@ -117,16 +127,19 @@ export default function Home() {
                   Agentic AI
                 </p>                                
               </div>
+
             </div>
         
           </div>
 
+          {/* Projects Section Columns */}
           <div className="flex flex-col justify-center items-center gap-1 flex-1 min-w-0">
             <h2 className="text-xl font-semibold leading-10 tracking-wide text-zinc-50">
               MY WORK
             </h2>
             <div className="flex space-y-2"/>
             <div className="flex flex-col justify-start items-start gap-1 flex-1 min-w-0">
+
               <Link href="https://github.com/cbcode4007/airport-travel-app" target="_blank">
                 <div className="flex flex-row gap-2 transition-all duration-300 ease-out hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
                   <Image
@@ -222,31 +235,39 @@ export default function Home() {
 
         </div>
 
+        {/* Learn More Row */}
         <div className="hidden md:flex mx-auto -my-6 max-w-7xl flex-row items-start justify-center flex-nowrap pb-8 gap-26">
+
+          {/* Learn More About Column */}
           <div className="group">
             <h2 className="text-m font-semibold leading-10 tracking-wide text-zinc-50 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] group-hover:scale-110 transition-all duration-300 ease-out">
               <Link href="/about">
                 LEARN MORE
               </Link>              
-            </h2>           
+            </h2>
             <hr className="mx-auto opacity-0 w-1/2 text-zinc-400 group-hover:scale-220 group-hover:opacity-100 transition-all ease-out "/>
           </div>
+
+          {/* Learn More Skills Column */}
           <div className="group">
             <h2 className="text-m font-semibold leading-10 tracking-wide text-zinc-50 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] group-hover:scale-110 transition-all duration-300 ease-out">
-              <Link href="/about">
+              <Link href="/skills">
                 LEARN MORE
               </Link>              
             </h2>           
             <hr className="mx-auto opacity-0 w-1/2 text-zinc-400 group-hover:scale-220 group-hover:opacity-100 transition-all ease-out "/>
           </div>
+
+          {/* Learn More Projects Column */}
           <div className="group">
             <h2 className="text-m font-semibold leading-10 tracking-wide text-zinc-50 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] group-hover:scale-110 transition-all duration-300 ease-out">
-              <Link href="/about">
+              <Link href="/projects">
                 LEARN MORE
               </Link>              
             </h2>           
             <hr className="mx-auto opacity-0 w-1/2 text-zinc-400 group-hover:scale-220 group-hover:opacity-100 transition-all ease-out "/>
           </div>
+        
         </div>
 
       </main>

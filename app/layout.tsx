@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Image from "next/image";
-// import { usePathname } from 'next/navigation';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Add both constant, and variable Metadata, for site details that can change such as selected page
 export const metadata: Metadata = {
   title: {
     default: "Colin B.",
@@ -35,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden`}
       >
+        {/* Consistent wallpaper across site */}
         <div className="min-h-screen font-sans bg-linear-to-b from-black to-transparent relative">
           <Header />
           <Image

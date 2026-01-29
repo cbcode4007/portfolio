@@ -10,6 +10,7 @@ type NavLinkProps = {
   onClick?: () => void;
 };
 
+// Navbar Link that considers currently selected page
 export default function NavLink({ href, children, onClick }: NavLinkProps) {
   const pathname = usePathname();
   const isActive = pathname === href;

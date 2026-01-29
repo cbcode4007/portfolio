@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import sgMail from "@sendgrid/mail";
 
+/* SendGrid API key to compose a new message from trusted sender */
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 export async function POST(req: Request) {
@@ -15,7 +16,7 @@ export async function POST(req: Request) {
     
     const name = `${first} ${last}`.trim();
 
-    // Basic validation
+    // Basic validation returning error status without any required field
     if (!first || !last || !email || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -24,7 +25,9 @@ export async function POST(req: Request) {
     }
 
     const msg = {
+      /* Dev business email */
       to: process.env.SENDGRID_TO_EMAIL!,
+      /* Trusted sender email */
       from: process.env.SENDGRID_FROM_EMAIL!,
       subject: `New contact form message from ${name}`,
       replyTo: email,
@@ -38,7 +41,6 @@ export async function POST(req: Request) {
       `,
     };
     
-    console.log("Has API key:", !!process.env.SENDGRID_API_KEY);
     await sgMail.send(msg);
 
     return NextResponse.json({ success: true });

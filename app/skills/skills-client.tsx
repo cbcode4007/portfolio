@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-
+{/* Initialize structure model for a skill card */}
 interface SkillCard {
   id: number;
   name: string;
@@ -11,6 +11,7 @@ interface SkillCard {
   projects: string[];
 }
 
+{/* Create SkillCard data array to later map each one to a model */}
 const skills: SkillCard[] = [
   { id: 1, name: "PYTHON", logoPath: "/python-logo-monochrome.png", projects: ["AI English Query", "Chat Max", "AI Operator", "AI Weather Report", "AI News Report", "AI Backup Analyzer"] },
   { id: 2, name: "FLUTTER DART", logoPath: "/flutter_logo_icon_214732.png", projects: ["IxIxI's Airport App", "Home AI Max"] },
@@ -20,12 +21,15 @@ const skills: SkillCard[] = [
   { id: 6, name: "AGENTIC AI", logoPath: "/openai.png", projects: ["AI English Query", "Chat Max", "Home AI Max", "AI Operator", "AI Weather Report", "AI News Report", "AI Backup Analyzer"] }
 ];
 
+{/* Takes a skill, its card's current flip state and a callback for flipping it around */}
 function FlipCard({ skill, isFlipped, onFlip }: { skill: SkillCard; isFlipped: boolean; onFlip: () => void }) {
   return (
+    /* Uses persepective to define a z-plane or 3D space for the cards instead of just flipping on their heads */
     <div
       className="relative w-64 h-80 cursor-pointer perspective"
       onClick={onFlip}
     >
+      {/* The actual flip transformation, swaps depending on current state and preserves 3D so that front doesn't overlap with back */}
       <div
         className={`relative w-full h-full transition-transform duration-500 transform-gpu`}
         style={{
@@ -33,7 +37,7 @@ function FlipCard({ skill, isFlipped, onFlip }: { skill: SkillCard; isFlipped: b
           transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
-        {/* Front side */}
+        {/* Card Front Side */}
         <div
           className="absolute w-full h-full bg-zinc-900 rounded-lg flex flex-col items-center justify-between p-6 text-center"
           style={{ backfaceVisibility: "hidden" }}
@@ -52,6 +56,8 @@ function FlipCard({ skill, isFlipped, onFlip }: { skill: SkillCard; isFlipped: b
             {skill.projects.length > 0 ? (
               <div>
                 <p className="font-semibold mb-1">Projects:</p>
+
+                {/* Map projects from the given skill index */}
                 <div className="space-y-1 items-start max-h-16 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent px-2 md:scroll-smooth">
                   {skill.projects.map((project, idx) => (
                     <p key={idx}>{project}</p>
@@ -64,7 +70,7 @@ function FlipCard({ skill, isFlipped, onFlip }: { skill: SkillCard; isFlipped: b
           </div>
         </div>
 
-        {/* Back side */}
+        {/* Card Back Side */}
         <div
           className="absolute w-full h-full bg-zinc-800 rounded-lg flex items-center justify-center p-6 hover:bg-gray-700 transition-colors duration:300 ease-out"
           style={{
@@ -94,6 +100,8 @@ export default function SkillsClient() {
     Object.fromEntries(skills.map(skill => [skill.id, true]))
   );
 
+  {/* Events */}
+
   const toggleFlip = (skillId: number) => {
     setFlipped(prev => ({ ...prev, [skillId]: !prev[skillId] }));
   };
@@ -111,9 +119,12 @@ export default function SkillsClient() {
   };
 
   const handleCardClick = (skillId: number, index: number) => {
-    if (index === 1) toggleFlip(skillId); // center flips
-    else if (index === 0) prevSlide(); // left card
-    else nextSlide(); // right card
+    {/* Flip center Card when pressed */}
+    if (index === 1) toggleFlip(skillId);
+    /* Go to left slide and flip that card when pressed */
+    else if (index === 0) prevSlide();
+    /* Go to right slide and flip that card when pressed */
+    else nextSlide();
   };
 
   const getVisibleSkills = () => {
@@ -124,22 +135,24 @@ export default function SkillsClient() {
     return visible;
   };
 
-  // --- MOBILE SWIPE HANDLING ---
+  // Mobile Swipe Handling (For ease of navigation through cards)
+  // Declare value for the X position when scrolling starts
   const touchStartX = useRef<number | null>(null);
 
+  // Get starting X position
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
-
+  // Calculate delta based on how far current X position is from the original and scroll
   const onTouchMove = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
     const deltaX = e.touches[0].clientX - touchStartX.current;
     if (deltaX > 50) {
-      // swipe right
+      // Swipe right
       prevSlide();
       touchStartX.current = null;
     } else if (deltaX < -50) {
-      // swipe left
+      // Swipe left
       nextSlide();
       touchStartX.current = null;
     }

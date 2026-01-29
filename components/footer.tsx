@@ -4,6 +4,8 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="text-zinc-400 p-4 fixed bottom-0 w-full select-none pointer-events-none">
+
+      {/* Social Logos Row */}
       <div className="mx-auto flex items-center justify-center p-4 gap-4">
         <Link target="_blank" href="https://github.com/cbcode4007" className="flex items-center gap-2 pointer-events-auto">
           <Image
@@ -24,6 +26,8 @@ const Footer = () => {
           />
         </Link>
       </div>  
+
+      {/* Copyright Statement */}
       <div className="container mx-auto text-center">        
         <p>&copy; {new Date().getFullYear()} Colin Bond</p>
       </div>

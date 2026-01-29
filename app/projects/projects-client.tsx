@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-/* Tags metadata */
+/* Tags Metadata */
 type Tag =
   | "python"
   | "flutter"
@@ -26,7 +26,7 @@ const TAG_ICONS: Record<Tag, string> = {
   mobile: "/phone invert.png",
 };
 
-/* Project interface models */
+/* Project Interface Models */
 interface ProjectCard {
   id: number;
   name: string;
@@ -36,7 +36,7 @@ interface ProjectCard {
   tags: Tag[];
 }
 
-/* Project entries */
+/* Project Entries */
 const projects: ProjectCard[] = [
   {
     id: 1,
@@ -130,10 +130,11 @@ const projects: ProjectCard[] = [
   },
 ];
 
-/* React component */
+/* React Component */
 export default function Projects() {
   const [activeTags, setActiveTags] = useState<Tag[]>([]);
 
+  /* Ensure only projects with the matching tags make it into the array of filtered projects that are shown */
   const filteredProjects = projects.filter(
     (project) =>
       activeTags.length === 0 ||
@@ -142,11 +143,13 @@ export default function Projects() {
 
   return (
     <div className="flex flex-col gap-4 px-4 md:px-0">
-      {/* Tag interface */}
+
+      {/* Tag Interface */}
       <div className="flex flex-wrap gap-3 justify-center">
         {(Object.keys(TAG_ICONS) as Tag[]).map((tag) => {
           const active = activeTags.includes(tag);
           return (
+            /* Activate or deactivate tags, changing their physical appearance and getting them into or out of the filter */            
             <button
               key={tag}
               onClick={() =>
@@ -173,7 +176,7 @@ export default function Projects() {
         })}
       </div>
 
-      {/* Desktop grid */}
+      {/* Desktop Grid */}
       <div className="hidden md:grid grid-cols-3 gap-8 w-full h-152 overflow-y-auto px-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent md:scroll-smooth pt-12">
         {filteredProjects.length === 0 ? (
           <p className="text-zinc-400 col-span-3 text-center">
@@ -183,9 +186,11 @@ export default function Projects() {
           filteredProjects.map((project) => (
             <Link target="_blank" href={`${project.link}`} key={project.id}>
               <div className="group relative bg-zinc-900 rounded-lg flex flex-col transition-all duration-300 hover:bg-gray-700 hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] h-68">
-                {/* Project image */}
+
+                {/* Project Image */}
                 <div className="relative w-full flex-1 overflow-hidden rounded-t-lg">
-                  {/* Tag icons */}
+
+                  {/* Project Tag Icons */}
                   <div className="absolute top-3 right-3 z-20 flex gap-2">
                     {project.tags.map((tag) => (
                       <div
@@ -230,7 +235,7 @@ export default function Projects() {
         )}
       </div>
 
-      {/* Mobile scrollable column */}
+      {/* Mobile Scrollable Column */}
       <div className="space-y-8"></div>
 
       <div className="flex flex-col md:hidden gap-4 w-full max-h-64 overflow-y-auto pb-8 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
@@ -242,9 +247,9 @@ export default function Projects() {
           filteredProjects.map((project) => (
             <Link target="_blank" href={`${project.link}`} key={project.id}>
               <div className="group relative bg-zinc-900 rounded-lg h-64 flex flex-col transition-all duration-300">
-                {/* Project image */}
+                {/* Project Image */}
                 <div className="relative w-full overflow-hidden rounded-t-lg h-1/2">
-                  {/* Tag icons */}
+                  {/* Tag Icons */}
                   <div className="absolute top-3 right-3 z-20 flex gap-2">
                     {project.tags.map((tag) => (
                       <div

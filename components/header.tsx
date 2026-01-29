@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <>
-      {/* Header bar */}
+      {/* Header Area */}
       <header className="fixed top-0 z-50 w-full p-8">
         <div className="mx-auto flex h-14 w-full items-center justify-between select-none">
           {/* Logo */}
@@ -24,7 +24,7 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop nav */}
+          {/* Desktop Navbar */}
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/about">About</NavLink>
@@ -33,7 +33,7 @@ export default function Header() {
             <NavLink href="/contact">Contact</NavLink>
           </nav>
 
-          {/* Mobile hamburger */}
+          {/* Mobile Hamburger Menu Icon */}
           <button
             onClick={() => setOpen(true)}
             className="md:hidden flex flex-col gap-1.5"
@@ -54,7 +54,7 @@ export default function Header() {
         `}
       />
 
-      {/* Mobile drawer */}
+      {/* Mobile Drawer Menu */}
       <aside
         className={`fixed left-0 top-0 z-50 h-full w-72 bg-black border-r border-zinc-800
           transform transition-transform duration-300 ease-out
@@ -62,7 +62,7 @@ export default function Header() {
         `}
       >
         <div className="flex flex-col h-full p-6 gap-8">
-          {/* Drawer header / logo */}
+          {/* Header Logo in Drawer */}
           <div className="flex items-center justify-between">
             <Image
               src="/logo.png"
@@ -73,7 +73,7 @@ export default function Header() {
             />
           </div>
 
-          {/* Drawer nav */}
+          {/* Drawer Nav Column */}
           <nav className="flex flex-col gap-4 text-sm font-medium">
             <NavLink href="/" onClick={() => setOpen(false)}>
               Home

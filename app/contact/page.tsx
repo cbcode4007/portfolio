@@ -12,7 +12,7 @@ export default function Contact() {
     <div className="flex h-[calc(100vh)] font-sans">
       <main className="flex h-full w-full flex-row">
 
-        {/* Left Background - Desktop Only */}        
+        {/* Left Background Desktop */}        
         <div className="hidden w-full md:flex flex-col justify-center items-center gap-6 h-full md:w-1/2 pb-32">
           <h1 className="text-3xl font-semibold leading-10 tracking-tight text-zinc-50 pb-2">
             Contact Me
@@ -27,7 +27,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Form - Full width on mobile, right side on desktop */}
+        {/* Right Form Desktop, Full Width Mobile*/}
         <div className="w-full md:w-1/2 h-full">
           <ContactClient />
         </div>
